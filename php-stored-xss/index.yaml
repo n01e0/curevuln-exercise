@@ -1,0 +1,20 @@
+version: 1
+title: 蓄積型XSS
+description: 蓄積型XSSへの対策の基本を学びます
+difficulty: beginner
+language: php
+tag:
+    - php
+    - xss
+text:
+    - title: 概要
+      file: text/step1.md
+    - title: 攻撃方法
+      file: text/step2.md
+    - title: 防御策
+      file: text/step3.md
+    - title: 演習
+      file: text/step4.md
+files:
+    - www/template_auth_index.php
+    - www/template_noAuth_index.php

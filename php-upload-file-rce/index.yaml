@@ -1,0 +1,25 @@
+vaersion: 1
+title: ファイルアップロードにまつわる任意コード実行
+description: PHPにおけるファイルアップロード機能による任意コード実行について学びます
+difficulty: beginner
+language: php
+tag:
+    - php
+    - xss
+text:
+    - title: アップロードしたファイルの実行権限設定不備の概要
+      file: text/step1.md
+    - title: 悪用例
+      file: text/step2.md
+    - title: 根本的対策
+      file: text/step3.md
+    - title: PHPにおける対策
+      file: text/step4.md
+    - title: 修正
+      file: text/step5.md
+files:
+    - www/fileFunction.php
+    - www/user.php
+    - www/template_user.php
+    - www/registration.php
+    - www/template_registration.php
