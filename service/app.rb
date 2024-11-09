@@ -33,7 +33,9 @@ TEXTS = CHALLENGES.keys.map {|name|
 
 get '/' do
   @challenges = CHALLENGES
-  @texts = TEXTS.map{|name, path| {name => File.basename(path)}}
+  @texts = TEXTS.map{|name, pathes| 
+    [name, pathes.map{|path| File.basename(path)}]
+  }.to_h
   erb :list
 end
 
