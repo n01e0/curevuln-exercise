@@ -9,8 +9,8 @@
       $converter = new \cebe\markdown\MarkdownExtra();
       $html = $converter->parse($_POST['content']);
 
-      $stmt->bindValue(':title', $_POST['title'], PDO::PARAM_STR);
-      $stmt->bindValue(':content', $html, PDO::PARAM_STR);
+      $stmt->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+      $stmt->bindParam(':content', $html, PDO::PARAM_STR);
       $stmt->execute();
     } catch (PDOException $e) {
       header('Content-Type: text/plain; charset=UTF-8', true, 500);
