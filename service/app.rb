@@ -24,7 +24,8 @@ CHALLENGES = {
   'rails-javascript-scheme-xss'           =>'http://localhost:8015',
   'rails-ssrf'                            =>'http://localhost:8016',
   'server-side-template-injection-smarty' =>'http://localhost:8017',
-  'vuejs-template-injection-on-php'       =>'http://localhost:8018'
+  'vuejs-template-injection-on-php'       =>'http://localhost:8018',
+  'go-datarace'                           =>'http://localhost:8019'
 }
 
 TEXTS = CHALLENGES.keys.map {|name| 

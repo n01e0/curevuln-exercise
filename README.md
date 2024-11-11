@@ -35,6 +35,7 @@ make build
 | rails-ssrf                            | 8016 |http://localhost:8016 |
 | server-side-template-injection-smarty | 8017 |http://localhost:8017 |
 | vuejs-template-injection-on-php       | 8018 |http://localhost:8018 |
+| go-datarace                           | 8019 |http://localhost:8019 |
 
 
 ---
