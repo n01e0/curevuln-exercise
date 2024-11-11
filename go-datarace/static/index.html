@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        #task-form {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        #task-form input {
+            padding: 8px;
+            margin-right: 5px;
+        }
+        #task-form button {
+            padding: 8px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="task-form">
+        <input type="text" id="task-input" placeholder="Enter task name" />
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    <ul id="task-list"></ul>
+
+    <script>
+        async function addTask() {
+            const taskInput = document.getElementById('task-input').value.trim();
+            if (!taskInput) return;
+
+            const response = await fetch('/tasks', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: taskInput })
+            });
+
+            if (response.ok) {
+                fetchTasks();
+                document.getElementById('task-input').value = '';
+            }
+        }
+
+        async function fetchTasks() {
+            const response = await fetch('/tasks/view');
+            if (response.ok) {
+                const tasks = await response.json();
+                const taskList = document.getElementById('task-list');
+                taskList.innerHTML = '';
+                tasks.forEach(task => {
+                    const li = document.createElement('li');
+                    li.textContent = `ID: ${task.id} - ${task.name}`;
+                    taskList.appendChild(li);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchTasks);
+    </script>
+</body>
+</html>
+
