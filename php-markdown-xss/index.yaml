@@ -4,19 +4,19 @@ description: MarkdownをHTMLレンダリングする際のXSS対策について�
 difficulty: beginner
 language: php
 tag:
-    - php
-    - xss
+  - php
+  - xss
 text:
-    - title: 概要
-      file: text/step1.md
-    - title: 攻撃方法
-      file: text/step2.md
-    - title: 防御策
-      file: text/step3.md
-    - title: 演習
-      file: text/step4.md
-    - title: 修正例
-      file: text/step5.md
+  - title: 概要
+    file: text/step1.md
+  - title: 攻撃方法
+    file: text/step2.md
+  - title: 防御策
+    file: text/step3.md
+  - title: 演習
+    file: text/step4.md
+  - title: 修正例
+    file: text/step5.md
 files:
-    - www/post.php
-    - www/templates/index.php
+  - www/post.php
+  - www/templates/index.php

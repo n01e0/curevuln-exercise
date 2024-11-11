@@ -4,13 +4,13 @@ description: RailsにおけるJavaScriptスキームを利用したXSSの対策�
 difficulty: beginner
 language: rails
 tag:
-    - rails
-    - xss
+  - rails
+  - xss
 text:
-    - title: JavaScriptスキームを利用したXSS
-      file: text/step1.md
-    - title: スキームの制限とRailsでの対策
-      file: text/step2.md
+  - title: JavaScriptスキームを利用したXSS
+    file: text/step1.md
+  - title: スキームの制限とRailsでの対策
+    file: text/step2.md
 files:
-    - myapp/app/views/users/index.html.erb
-    - myapp/app/controllers/users_controller.rb
+  - myapp/app/views/users/index.html.erb
+  - myapp/app/controllers/users_controller.rb

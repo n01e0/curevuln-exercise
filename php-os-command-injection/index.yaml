@@ -4,18 +4,18 @@ description: OSコマンドインジェクションの対策について学び�
 difficulty: beginner
 language: php
 tag:
-    - php
-    - command
-    - injection
+  - php
+  - command
+  - injection
 text:
-    - title: 概要
-      file: text/step1.md
-    - title: 攻撃方法
-      file: text/step2.md
-    - title: 防御策
-      file: text/step3.md
-    - title: 演習
-      file: text/step4.md
+  - title: 概要
+    file: text/step1.md
+  - title: 攻撃方法
+    file: text/step2.md
+  - title: 防御策
+    file: text/step3.md
+  - title: 演習
+    file: text/step4.md
 files:
-    - www/query-form.html
-    - www/query-process.php
+  - www/query-form.html
+  - www/query-process.php
