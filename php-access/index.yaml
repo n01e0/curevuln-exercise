@@ -4,19 +4,19 @@ description: PHPにおけるアクセス制御の基本を学びます
 difficulty: beginner
 language: php
 tag:
-    - php
-    - ahth
+  - php
+  - ahth
 text:
-    - title: アクセス制御の不備とは
-      file: text/step1.md
-    - title: 脆弱性の悪用
-      file: text/step2.md
-    - title: 対策方法解説
-      file: text/step3.md
-    - title: URLに埋め込まれた認証/認可情報の解説
-      file: text/step4.md
-    - title: URLに埋め込まれた認証/認可情報の対策
-      file: text/step5.md
+  - title: アクセス制御の不備とは
+    file: text/step1.md
+  - title: 脆弱性の悪用
+    file: text/step2.md
+  - title: 対策方法解説
+    file: text/step3.md
+  - title: URLに埋め込まれた認証/認可情報の解説
+    file: text/step4.md
+  - title: URLに埋め込まれた認証/認可情報の対策
+    file: text/step5.md
 files:
-    - www/info.php
-    - www/authFunction.php
+  - www/info.php
+  - www/authFunction.php

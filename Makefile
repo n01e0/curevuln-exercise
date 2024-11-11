@@ -14,6 +14,16 @@ build:
 		fi \
 	done
 
+clean:
+	@for dir in $(DIRS); do \
+		echo "Removing container for $$dir"; \
+		if [ -d $$dir ]; then \
+			cd $$dir; \
+			docker compose rm -f; \
+			cd -; \
+		fi \
+	done
+
 up:
 	@if command -v fzf >/dev/null; then \
 			selected_target=`echo $(DIRS) | tr ' ' '\n' | fzf`; \

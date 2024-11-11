@@ -4,15 +4,15 @@ description: PHPでサーバーサイドレンダリングしているアプリ�
 difficulty: beginner
 language: javascript
 tag:
-    - php
-    - vuejs
+  - php
+  - vuejs
 text:
-    - title: 概要
-      file: text/step1.md
-    - title: 攻撃方法
-      file: text/step2.md
-    - title: 防御策
-      file: text/step3.md
+  - title: 概要
+    file: text/step1.md
+  - title: 攻撃方法
+    file: text/step2.md
+  - title: 防御策
+    file: text/step3.md
 files:
-    - html/index.php
-    - html/safe.php
+  - html/index.php
+  - html/safe.php

@@ -4,15 +4,15 @@ description: Smartyテンプレートを動的に生成した際のサーバー�
 difficulty: beginner
 language: php
 tag:
-    - php
-    - ssti
+  - php
+  - ssti
 text:
-    - title: 概要
-      file: text/step1.md
-    - title: 攻撃方法
-      file: text/step2.md
-    - title: 対策
-      file: text/step3.md
+  - title: 概要
+    file: text/step1.md
+  - title: 攻撃方法
+    file: text/step2.md
+  - title: 対策
+    file: text/step3.md
 files:
-    - html/index.php
-    - html/templates/index.tpl
+  - html/index.php
+  - html/templates/index.tpl

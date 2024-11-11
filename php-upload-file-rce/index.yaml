@@ -4,22 +4,22 @@ description: PHPにおけるファイルアップロード機能による任意�
 difficulty: beginner
 language: php
 tag:
-    - php
-    - xss
+  - php
+  - xss
 text:
-    - title: アップロードしたファイルの実行権限設定不備の概要
-      file: text/step1.md
-    - title: 悪用例
-      file: text/step2.md
-    - title: 根本的対策
-      file: text/step3.md
-    - title: PHPにおける対策
-      file: text/step4.md
-    - title: 修正
-      file: text/step5.md
+  - title: アップロードしたファイルの実行権限設定不備の概要
+    file: text/step1.md
+  - title: 悪用例
+    file: text/step2.md
+  - title: 根本的対策
+    file: text/step3.md
+  - title: PHPにおける対策
+    file: text/step4.md
+  - title: 修正
+    file: text/step5.md
 files:
-    - www/fileFunction.php
-    - www/user.php
-    - www/template_user.php
-    - www/registration.php
-    - www/template_registration.php
+  - www/fileFunction.php
+  - www/user.php
+  - www/template_user.php
+  - www/registration.php
+  - www/template_registration.php
