@@ -29,7 +29,7 @@ CHALLENGES = {
 }
 
 TEXTS = CHALLENGES.keys.map {|name| 
-  [name, Dir.glob("/challenges/#{name}/text/*")]
+  [name, Dir.glob("/challenges/#{name}/text/*.md")]
 }.to_h
 
 get '/' do
