@@ -1,6 +1,6 @@
 <?php
 
-    function varidatRegistration (string $loginId, string $name, string $addr, string $password ):bool  {
+    function validateRegistration (string $loginId, string $name, string $addr, string $password ):bool  {
 
         if ($loginId === '' || $name === '' || $addr === '' || $password === '') {
 
@@ -12,7 +12,7 @@
 
     }
 
-    function varidatLogin (string $loginId, string $password):bool {
+    function validateLogin (string $loginId, string $password):bool {
 
         if ( $loginId == '' || $password == '' ) {
 
@@ -28,7 +28,7 @@
 
         if ( $icon === '' ) {
 
-            $icon = 'null.png';
+            $icon = 'default_icon.png';
 
         }
 

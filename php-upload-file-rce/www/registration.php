@@ -12,7 +12,7 @@
 
         $dbh    = connectDB();
 
-        if ( !varidatRegistration( $_POST['loginId'], $_POST['name'], $_POST['addr'], $_POST['password'] )  ) {
+        if ( !validateRegistration( $_POST['loginId'], $_POST['name'], $_POST['addr'], $_POST['password'] )  ) {
 
             header("Location: / ");
             exit;

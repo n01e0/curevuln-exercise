@@ -8,7 +8,7 @@
 
         $dbh    = connectDB();
 
-        if ( !varidatLogin( $_POST['loginId'], $_POST['password'] ) ) {
+        if ( !validateLogin( $_POST['loginId'], $_POST['password'] ) ) {
 
             $mess = 'loginIDまたはpasswordが入力されんていません';
 
