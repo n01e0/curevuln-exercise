@@ -12,7 +12,8 @@ function fileUpdata ($dbh):bool {
         $query  = 'UPDATE users SET icon = :icon WHERE id = :userId';
         $stmt   = $dbh->prepare($query);
 
-        $stmt->bindParam(':icon',   basename($_FILES['icon']['name']),      PDO::PARAM_STR);
+        $iconname = basename($_FILES['icon']['name']);
+        $stmt->bindParam(':icon',   $iconname,      PDO::PARAM_STR);
         $stmt->bindParam(':userId', $_SESSION['id'],                        PDO::PARAM_INT);
         $stmt->execute();
 

@@ -12,7 +12,7 @@ require_once 'config.php';
 </head>
 <body>
     <div class="head">
-        <?php if ($_SESSION['id'] == ''): ?>
+        <?php if (!isset($_SESSION['id'])): ?>
             <a href="login.php"><div class="top-button">
                 ログイン
             </div></a>
@@ -32,7 +32,7 @@ require_once 'config.php';
         <?php endif; ?>
     </div>
     <div class="app">
-        <?php if ($_SESSION['id'] == ''): ?>
+        <?php if (!isset($_SESSION['id'])): ?>
             <h1>Login</h1>
             <form class="pure-form pure-form-aligned contacts" action="login.php" method="post">
                 <fieldset>
@@ -44,7 +44,7 @@ require_once 'config.php';
                         <label for="foo">Password</label><br>
                         <input id="password" name="password" type="password" placeholder="password"><br>
                     </div>
-                    <?php echo $mess ; ?>
+                    <?php if (isset($mess)) { echo $mess ; } ?>
                     <div class="pure-controls">
                         <button type="submit" class="pure-button pure-button-primary">送信</button>
                     </div>

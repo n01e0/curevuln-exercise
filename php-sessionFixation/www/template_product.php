@@ -10,7 +10,7 @@
 <body>
     <div class="head">
         <div class="top-button">
-            <?php if ($_SESSION['id'] != ''): ?>
+            <?php if (isset($_SESSION['id'])): ?>
                 <a href="/"><div>Top</div></a>
                 <a href="user.php"><div>Info</div></a>
                 <a href="logout.php"><div>Logout</div></a>
@@ -31,7 +31,7 @@
                 <h3><?php echo $product['title']; ?></h3>
                 <p><?php echo $product['content']; ?></p>
                 <p>¥<?php echo $product['price']; ?></p>
-                <?php if ($_SESSION['id'] != ''): ?>
+                <?php if (isset($_SESSION['id'])): ?>
                 <a href="shopping.php?id=<?php echo $product['id'] ?>">購入はこちら</a>
                 <?php else: ?>
                 <a href="./login.php">購入にはLoginが必要です</a>
@@ -49,7 +49,7 @@
                 </div>
             </div>
         <?php endforeach; ?>
-        <?php if ($_SESSION['id'] != ''): ?>
+        <?php if (isset($_SESSION['id'])): ?>
             <h1>レビュー投稿</h1>
             <form class="pure-form pure-form-aligned contacts" action="comment.php" method="post">
                 <fieldset>

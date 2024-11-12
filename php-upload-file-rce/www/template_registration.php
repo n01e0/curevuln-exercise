@@ -12,7 +12,7 @@ require_once 'config.php';
 </head>
 <body>
     <div class="head">
-        <?php if ($_SESSION['id'] == ''): ?>
+        <?php if (!isset($_SESSION['id'])): ?>
             <a href="login.php"><div class="top-button">
                 ログイン
             </div></a>
@@ -32,7 +32,7 @@ require_once 'config.php';
         <?php endif; ?>
     </div>
     <div class="app">
-        <?php if ($_SESSION['id'] == ''): ?>
+        <?php if (!isset($_SESSION['id'])): ?>
             <h1>新規登録</h1>
             <form class="pure-form pure-form-aligned contacts" action="registration.php" method="post" enctype="multipart/form-data">
                 <fieldset>

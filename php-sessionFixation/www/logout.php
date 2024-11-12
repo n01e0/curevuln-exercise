@@ -1,7 +1,7 @@
 <?php
 require 'setting.php';
 
-if ($_SESSION['id'] == '') {
+if (!isset($_SESSION['id'])) {
     header("Location: / ");
     exit();
 }

@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION['id'] != '') {
+if (isset($_SESSION['id'])) {
     header('Location: /');
 }
 ?>
@@ -39,7 +39,7 @@ if ($_SESSION['id'] != '') {
             </fieldset>
         </form>
         <?php
-        if ($error) {
+        if (isset($error)) {
             echo "<p>".$error."</p>";
         }
         ?>

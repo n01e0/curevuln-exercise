@@ -1,6 +1,6 @@
 <?php
 require 'setting.php';
-if ($_SESSION['id'] == '') {
+if (!isset($_SESSION['id'])) {
     header("Location: / ");
     exit();
 }
@@ -31,9 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $price = $products[0]['price'] * $_POST['num'];
     $dbh = connectDB();
     $query =
-    "INSERT INTO `shipping` (`id`, `user_id`, `product_id`,`name`, `num`, `price`, `addr`) VALUES ( :id, :user_id, :product_id, :name, :num, :price, :addr );";
+    "INSERT INTO shipping (user_id, product_id,name, num, price, addr) VALUES ( :user_id, :product_id, :name, :num, :price, :addr );";
     $stmt  = $dbh->prepare($query);
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt->bindValue(':user_id', $_SESSION['id'], PDO::PARAM_INT);
     $stmt->bindValue(':product_id', $_POST['product_id'], PDO::PARAM_INT);
     $stmt->bindParam(':name', $_POST['name'], PDO::PARAM_STR);

@@ -12,7 +12,7 @@ require_once 'config.php';
 </head>
 <body>
     <div class="head">
-        <?php if ($_SESSION['id'] == ''): ?>
+        <?php if (!isset($_SESSION['id'])): ?>
             <a href="login.php"><div class="top-button">
                 ログイン
             </div></a>
@@ -32,7 +32,7 @@ require_once 'config.php';
         <?php endif; ?>
     </div>
     <div class="app">
-        <?php if ($_SESSION['id'] == ''): ?>
+        <?php if (!isset($_SESSION['id'])): ?>
             <h1>Topページ！</h1>
             <div class="link-zone">
                 <a href="login.php">ログインはこちら</a>

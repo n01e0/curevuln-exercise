@@ -10,7 +10,7 @@
 <body>
     <div class="head">
         <div class="top-button">
-            <?php if ($_SESSION['id'] != ''): ?>
+            <?php if (isset($_SESSION['id'])): ?>
                 <a href="/"><div>Top</div></a>
                 <a href="user.php"><div>Info</div></a>
                 <a href="logout.php"><div>Logout</div></a>

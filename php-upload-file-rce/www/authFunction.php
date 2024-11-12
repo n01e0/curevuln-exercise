@@ -2,7 +2,7 @@
 
     function varidatRegistration (string $loginId, string $name, string $addr, string $password ):bool  {
 
-        if ($lodinId === '' || $name === '' || $addr === '' || $password === '') {
+        if ($loginId === '' || $name === '' || $addr === '' || $password === '') {
 
             return (bool)false ;
 
@@ -32,14 +32,12 @@
 
         }
 
-        $query      = 'INSERT INTO users (`id`, `loginId`, `name`, `addr`, `icon`, `password`) VALUES (:id, :loginId, :name, :addr, :icon, :password);';
+        $query      = 'INSERT INTO users (loginId, name, addr, icon, password) VALUES (:loginId, :name, :addr, :icon, :password);';
         $stmt       = $dbh->prepare($query);
-        $id         = Null;
         $password   = password_hash($password,PASSWORD_DEFAULT);
 
         try {
 
-            $stmt->bindParam(":id",         $id,        PDO::PARAM_INT );
             $stmt->bindParam(":loginId",    $loginId,   PDO::PARAM_STR );
             $stmt->bindParam(":name",       $name,      PDO::PARAM_STR );
             $stmt->bindParam(":addr",       $addr,      PDO::PARAM_STR );
@@ -85,7 +83,7 @@
         if ($ret) {
 
             session_regenerate_id(TRUE);
-            $_SESSION["userName"]   = $usersData[0]['loginId'];
+            $_SESSION["userName"]   = $usersData[0]['loginid'];
             $_SESSION["id"]         = $usersData[0]['id'];
 
         }

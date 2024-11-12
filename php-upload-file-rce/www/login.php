@@ -1,7 +1,7 @@
 <?php
     require_once 'config.php';
 
-    if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' && $_SESSION['id'] == '' )   {
+    if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' && !isset($_SESSION['id']) )   {
 
         require_once 'common.php';
         require_once 'authFunction.php';
@@ -25,7 +25,7 @@
 
         }
 
-    } else if ( !$_SESSION['id'] == '' ) {
+    } else if ( isset($_SESSION['id']) ) {
 
         header("Location: / ");
         exit;
