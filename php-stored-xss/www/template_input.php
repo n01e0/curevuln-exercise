@@ -1,6 +1,8 @@
 <?php
-session_start();
-if ($_SESSION['id'] == '') {
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['id'])) {
     header("Location: / ");
     exit();
 }
@@ -62,9 +64,7 @@ if ($_SESSION['id'] == '') {
 
                 <div class="pure-control-group">
                     <label for="foo">お問い合わせ内容</label><br>
-                    <textarea id="content" name="content" type="text">
-
-                    </textarea><br>
+                    <textarea id="content" name="content" type="text"></textarea><br>
                 </div>
 
                 <div class="pure-controls">

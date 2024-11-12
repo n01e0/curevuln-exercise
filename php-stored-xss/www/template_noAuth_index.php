@@ -82,7 +82,9 @@
                 </div>
             </fieldset>
         </form>
-        <?php echo "<p>".$error."</p>"; ?>
+        <?php if (isset($error)) {
+            echo "<p>".$error."</p>";
+        }?>
     </div>
 </body>
 </html>

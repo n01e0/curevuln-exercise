@@ -1,19 +1,19 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     header("X-XSS-Protection: 0;");
 
-    if ($_SESSION['id'] == '') {
+    if (!isset($_SESSION['id'])) {
         header("Location: / ");
         exit();
     }
 
     require 'common.php';
     $dbh = connectDB();
-    $id = Null;
     try {
-        $query = "INSERT INTO `contact` (`id`, `title`, `content`) VALUES ( :id, :title, :content );";
+        $query = "INSERT INTO contact (title, content) VALUES ( :title, :content );";
         $stmt  = $dbh->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':title', $_GET['title'], PDO::PARAM_STR);
         $stmt->bindParam(':content', $_GET['content'], PDO::PARAM_STR);
         $stmt->execute();
