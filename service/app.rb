@@ -42,6 +42,11 @@ end
 
 get '/:name' do
   name = params[:name]
+  options = {
+    auto_ids: false,
+    html_to_native: true,
+    syntax_highlighter: 'rouge',
+  }
   if !CHALLENGES.keys.include? name
     status 404
     '404 - Challenge not found'
@@ -50,7 +55,7 @@ get '/:name' do
     @title = name
     @markdown_contents = @texts.map { |file_path|
       markdown_content = File.read(file_path)
-      html_content = Kramdown::Document.new(markdown_content).to_html
+      html_content = Kramdown::Document.new(markdown_content, options).to_html
       { file_path: file_path, html_content: html_content }
     }
     erb :challenge
