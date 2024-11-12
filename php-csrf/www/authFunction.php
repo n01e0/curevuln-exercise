@@ -18,12 +18,12 @@ function login(object $dbh, string $login, string $password):bool {
     return (bool)false ;
   }
 
-  if (!password_verify($password, $usersData[0]['password'])) {
+  if (!isset($usersData[0]['password']) || !password_verify($password, $usersData[0]['password'])) {
     return (bool)false;
   }
 
   session_regenerate_id(TRUE);
-  $_SESSION["userName"] = $usersData[0]['loginId'];
+  $_SESSION["userName"] = $usersData[0]['loginid'];
   $_SESSION["id"] = $usersData[0]['id'];
 
   return (bool)true;
