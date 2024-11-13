@@ -7,7 +7,6 @@ services:
     volumes:
       - ./db:/docker-entrypoint-initdb.d
       - ./postgresql.conf:/etc/postgresql/postgresql.conf
-      - ./postgres:/var/lib/postgresql/data"
   php-fpm:
     build:
       context: .
